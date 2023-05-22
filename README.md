@@ -38,6 +38,7 @@ Install all dependencies
   pip install -r requirements.txt
 ```
 
+(this step doesn't work on every internt connection, if it doesn't work, then try running this command with a different internet source)
 ```bash
   python3 -c "import nltk; nltk.download('punkt'); nltk.download('wordnet');"
 ```
