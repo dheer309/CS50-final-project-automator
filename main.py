@@ -1,17 +1,16 @@
 import argparse
-import requests
-from PIL import Image, ImageFilter
 import os
 import shutil
+
 import feedparser
-from spellchecker import SpellChecker
-
-from textblob import TextBlob
+import requests
+from nltk import word_tokenize
 from nltk.corpus import wordnet
-
-from sumy.parsers.plaintext import PlaintextParser
+from spellchecker import SpellChecker
 from sumy.nlp.tokenizers import Tokenizer
+from sumy.parsers.plaintext import PlaintextParser
 from sumy.summarizers.lex_rank import LexRankSummarizer
+from textblob import TextBlob
 
 
 def get_top_stories():
@@ -21,9 +20,11 @@ def get_top_stories():
     top_stories = [entry.title for entry in feed.entries]
     return top_stories
 
+
 def present_in_bulleted_list(stories):
     for story in stories:
         print(f'• {story}')
+
 
 def organize_files(source_dir, target_dir):
     for filename in os.listdir(source_dir):
@@ -39,11 +40,13 @@ def organize_files(source_dir, target_dir):
             shutil.move(source_path, target_path)
             print(f"Moved {filename} to {target_folder}")
 
+
 def summarize_text(text, num_sentences=3):
     parser = PlaintextParser.from_string(text, Tokenizer("english"))
     summarizer = LexRankSummarizer()
     summary = summarizer(parser.document, num_sentences)
     return [str(sentence) for sentence in summary]
+
 
 def get_synonyms(word):
     synonyms = []
@@ -51,6 +54,7 @@ def get_synonyms(word):
         for lemma in syn.lemmas():
             synonyms.append(lemma.name())
     return synonyms
+
 
 def replace_with_synonyms(text):
     tokens = word_tokenize(text)
@@ -63,10 +67,12 @@ def replace_with_synonyms(text):
             replaced_tokens.append(token)
     return ' '.join(replaced_tokens)
 
+
 def get_sentiment_score(text):
     blob = TextBlob(text)
     sentiment_score = blob.sentiment.polarity
     return sentiment_score
+
 
 def spell_check(text):
     spell = SpellChecker()
@@ -79,26 +85,28 @@ def spell_check(text):
 
     return corrected_text.strip()
 
+
 def main():
     parser = argparse.ArgumentParser(description='Automation Tools')
-    parser.add_argument('--summarizenews', action='store_true', help='Summarize top stories from Google News')
+    parser.add_argument('--summarize-news', action='store_true', help='Summarize top stories from Google News')
 
     parser.add_argument('--organize', action='store_true', help='Organize files into sub folders.')
     parser.add_argument('--input-dir', type=str, help='Input directory path.')
     parser.add_argument('--output-dir', type=str, help='Output directory path.')
-    
-    parser.add_argument('--summarizetext', type=str, help='Text to summarize.')
+
+    parser.add_argument('--summarize-text', type=str, help='Text to summarize.')
     parser.add_argument('--num_sentences', type=int, default=3, help='Number of sentences in the summary.')
-    
+
     parser.add_argument('--text-spin', type=str, help='Replace words in your text with synonyms.')
 
-    parser.add_argument('--sentiment-analysis', type=str, help='Analyses text to tell if its positive negitive or neutral.')
+    parser.add_argument('--sentiment-analysis', type=str,
+                        help='Analyses text to tell if its positive negitive or neutral.')
 
-    parser.add_argument('--spell-checker', type=str, help='Corrects the inncorrect spellings in the text.')
+    parser.add_argument('--spell-checker', type=str, help='Corrects the incorrect spellings in the text.')
 
     args = parser.parse_args()
 
-    if args.summarizenews:
+    if args.summarize_news:
         stories = get_top_stories()
         present_in_bulleted_list(stories)
 
@@ -107,24 +115,24 @@ def main():
         target_directory = args.output_dir
         organize_files(source_directory, target_directory)
 
-    if args.summarizetext:
+    if args.summarize_text:
         summary_sentences = summarize_text(args.summarizetext, args.num_sentences)
         print("Text Summary:")
         for sentence in summary_sentences:
             print("- " + sentence)
-    
-    if args.text-spin:
-        new_text = replace_with_synonyms(args.text-spin)
-        print("New text with synonyms:")
-        print(new_text)
 
-    if args.sentiment-analysis:
-        sentiment_score = get_sentiment_score(args.sentiment-analysis)
-        print("Sentiment score: ", sentiment_score)
+    if args.text_spin:
+        new_text = replace_with_synonyms(args.text_spin)
+        print("New text with synonyms: ", new_text, "\n")
 
-    if args.spell-checker:
-        corrected_text = spell_check(args.spell-checker)
-        print("Corrected text: ", corrected_text)
+    if args.sentiment_analysis:
+        sentiment_score = get_sentiment_score(args.sentiment_analysis)
+        print("Sentiment score: ", sentiment_score, "\n")
+
+    if args.spell_checker:
+        corrected_text = spell_check(args.spell_checker)
+        print("Corrected text: ", corrected_text, "\n")
+
 
 if __name__ == '__main__':
     main()
