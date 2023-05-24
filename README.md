@@ -84,8 +84,18 @@ arguements
 - sentiment-analysis : Run the sentiment analysis. Requires str value.
 - spell-checker : Run the spell checker. Requires str value.
 
+## Example Usages
+```bash
+python main.py --summarize-news
+python main.py --organize --input-dir /path/to/input --output-dir /path/to/output
+python main.py --summarize-text "Lorem ipsum dolor sit amet."
+python main.py --text-spin "Replace this text with synonyms."
+python main.py --sentiment-analysis "This is a positive sentence."
+python main.py --spell-checker "Thiss is a testt with incorreect spellings."
+```
+
 ## About Us
-*about us
+We are high school students and classmates who are passionate about programming and love to solve different problems and take on challenges. We took the CS50 course as it presented us with an opportunity to learn and demonstrate our skills.
 
 ## Authors
 - [@dheer309](https://www.github.com/dheer309)
