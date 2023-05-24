@@ -1,10 +1,36 @@
-# CS50 Final Project - By Dheer Maheshwari and Pritansh Sahsani
+# automate50 - By Dheer Maheshwari and Pritansh Sahsani
 
-this project automates basic stuff used daily by people into one command line utility... bla blah blah...... (tu likhde pritansh)
+#### Video Demo:  *url
+
+### description:
+
+Our project is a series of command-line automations in python related to words and language, such as summerizing text, spell checking, news summerizing, etc.
+
+
+**News summerizer:** Takes the top news from Google News and summerizes them to give a list of the latest news.
+
+**File organizer:** Sorts the files in the input directory into seperate directories based on their file type. 
+
+**Text summarizer:** Takes a input number of lines and summarizes the input text in that number of lines.
+
+**Text spin:** Similar to spinbot or quillbot, it replaces the words in the input text with synonyms.
+
+**Sentiment analysis:** Takes the input text and analyzes if it comments positively, negitively or neutrally on a topic.
+
+**Spell checker:** Takes the input text and checks and fixes the spelling errors.
 
 ## Lessons Learned
+This project provided us several valuable learning opportunities:
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
+- Understanding API and package functionality: By using different APIs and packages, we gained a deeper understanding of how they work and the specific functionality they provide. This knowledge can be valuable when integrating APIs into your own projects or when working with existing systems that rely on APIs.
+
+- Practicing implementation: Working with APIs involves implementing them in your code. By using different APIs, we practiced integrating them into our project. This hands-on experience strengthened our programming skills and exposed us to different coding patterns, libraries, and frameworks associated with each API.
+
+- Learning best practices: Documentation provided by API providers is a valuable resource for understanding how to use their APIs effectively. Reading and understanding API documentation taught us  about best practices, recommended usage patterns, error handling, authentication mechanisms, and any limitations or restrictions that may exist. These guidelines help you write cleaner, more efficient code and avoid common pitfalls.
+
+- Interpreting documentation: Ducumentations are often complex and hard to wrap our head around, using extremely technical language and specifing every small detail, even things that are rarely useful the programmers, so through this project, we could learn a lot about how we can get the useful information out of documentations.
+
+- Enhancing problem-solving abilities: Using different APIs and reading their documentation exposes you to a wide range of functionalities and use cases. This exposure helped expand our problem-solving abilities by presenting us with various challenges and opportunities.
 
 ## Setup Locally
 
@@ -17,11 +43,10 @@ Download this project, and go to the project directory
 Create a virtual environment
 
 ```bash
-  python -m venv venv
+  python -m venv /path/to/folder
 ```
 
 Activate the virtual environment: Mac/Linux
-
 ```bash
   source venv/bin/activate
 ```
@@ -43,45 +68,25 @@ Install all dependencies
   python3 -c "import nltk; nltk.download('punkt'); nltk.download('wordnet');"
 ```
 
-Run the code
+## Run the code
 
 ```bash
-  python main.py --(tool you wish to run)
+  python main.py --(arguement) (value)
 ```
+arguements
+- summarize-news : Run the news summarizer. 
+- organize : Run the file organizer. requires input-dir and output-dir.
+- input-dir : add the input directory for the file organizer.
+- output-dir : add the output directory for the file organizer.
+- summarize-text : Run the text summerizer. Requires str value and num_sentences.
+- num_sentences : number of sentences in the summary. 
+- text_spin : Run the text spin. Requires str value.
+- sentiment-analysis : Run the sentiment analysis. Requires str value.
+- spell-checker : Run the spell checker. Requires str value.
 
-## Usage
-
-1. Open a terminal or command prompt and navigate to the root directory of the project (if you haven't done so already).
-
-2. Run the main.py script with the desired command-line arguments to execute the different automation tools. The available options are:
-
-* --summarize-news: Summarize top stories from Google News.
-* --organize: Organize files into subfolders based on their file extensions.
-* --input-dir: Specify the input directory path for the file organization tool.
-* --output-dir: Specify the output directory path for the file organization tool.
-* --summarize-text: Provide the text to summarize.
-* --num-sentences: Specify the number of sentences in the summary (default: 3).
-* --text-spin: Replace words in text with synonyms.
-* --sentiment-analysis: Perform sentiment analysis on text.
-* --spell-checker: Correct the incorrect spellings in the text.
-
-Example Usages:
-```bash
-python main.py --summarize-news
-python main.py --organize --input-dir /path/to/input --output-dir /path/to/output
-python main.py --summarize-text "Lorem ipsum dolor sit amet."
-python main.py --text-spin "Replace this text with synonyms."
-python main.py --sentiment-analysis "This is a positive sentence."
-python main.py --spell-checker "Thiss is a testt with incorreect spellings."
-```
-
-3. The output of each tool will be displayed in the terminal
-
-## 🚀 About Us
-
-write anything about us...
+## About Us
+*about us
 
 ## Authors
-
 - [@dheer309](https://www.github.com/dheer309)
 - [@pritansh-sahsani](https://www.github.com/pritansh-sahsani)
