@@ -42,7 +42,7 @@ def replace_with_synonyms(text):
 def get_sentiment_score(text):
     blob = TextBlob(text)
     sentiment_score = blob.sentiment.polarity
-    return sentiment_score
+    return round(sentiment_score, 1)
 
 
 def spell_check(text):
