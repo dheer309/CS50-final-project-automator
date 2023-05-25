@@ -2,35 +2,36 @@
 
 #### Video Demo:  *url
 
-### description:
+#### Description:
 
 Our project is a series of command-line automations in python related to words and language, such as summerizing text, spell checking, news summerizing, etc.
 
 
-**News summerizer:** Takes the top news from Google News and summerizes them to give a list of the latest news.
+**News summarizer:** Takes the top news from Google News and summarizes them to give a list of the latest news.
 
-**File organizer:** Sorts the files in the input directory into seperate directories based on their file type. 
+**File organizer:** Sorts the files in the input directory into separate directories based on their file type. 
 
 **Text summarizer:** Takes a input number of lines and summarizes the input text in that number of lines.
 
-**Text spin:** Similar to spinbot or quillbot, it replaces the words in the input text with synonyms.
+**Text spin:** Similar to quillbot, it replaces the words in the input text with synonyms.
 
-**Sentiment analysis:** Takes the input text and analyzes if it comments positively, negitively or neutrally on a topic.
+**Sentiment analysis:** Takes the input text and analyzes if it comments positively, negatively or neutrally on a topic.
 
 **Spell checker:** Takes the input text and checks and fixes the spelling errors.
 
 ## Lessons Learned
+
 This project provided us several valuable learning opportunities:
 
-- Understanding API and package functionality: By using different APIs and packages, we gained a deeper understanding of how they work and the specific functionality they provide. This knowledge can be valuable when integrating APIs into your own projects or when working with existing systems that rely on APIs.
+- Understanding APIs and package functionality: While doing this project, we explored different APIs and packages, which helped us gain a deeper understanding of how they work and the functionalities they provide. This knowledge can be valuable for us, when we integrate APIs and different libraries/packages in our projects or when we work on other programs that rely on APIs or packages.
 
-- Practicing implementation: Working with APIs involves implementing them in your code. By using different APIs, we practiced integrating them into our project. This hands-on experience strengthened our programming skills and exposed us to different coding patterns, libraries, and frameworks associated with each API.
+- Practicing implementation: By using different APIs, we practiced integrating them into our project. This project strengthened our programming skills and we learnt many different coding patterns, libraries, and frameworks which we can use in development process.
 
-- Learning best practices: Documentation provided by API providers is a valuable resource for understanding how to use their APIs effectively. Reading and understanding API documentation taught us  about best practices, recommended usage patterns, error handling, authentication mechanisms, and any limitations or restrictions that may exist. These guidelines help you write cleaner, more efficient code and avoid common pitfalls.
+- Learning best practices: Documentation provided by package developers was a valuable resource for understanding how to use their package effectively. Reading and understanding different documentation taught us  about best coding practices, recommended usage patterns, and error handling. These things helped us write cleaner and more efficient code, and avoid common errors.
 
-- Interpreting documentation: Ducumentations are often complex and hard to wrap our head around, using extremely technical language and specifing every small detail, even things that are rarely useful the programmers, so through this project, we could learn a lot about how we can get the useful information out of documentations.
+- Understanding documentation: Often, we found some documentations were complex and it was hard to wrap our head around, and the documentation often used extremely technical language and specifing every small detail, things that were rarely useful to us, and through this project, we learnt a lot about how we can get the useful information out of documentations.
 
-- Enhancing problem-solving abilities: Using different APIs and reading their documentation exposes you to a wide range of functionalities and use cases. This exposure helped expand our problem-solving abilities by presenting us with various challenges and opportunities.
+- Practicing/improving problem-solving abilities: Using different packages and reading their documentation has taught us wide range of their functionalities and how we can write code to make them work. This project overall has helped us enhance our problem-solving abilities as we gone through various hurdles and challenges.
 
 ## Setup Locally
 
@@ -71,18 +72,18 @@ Install all dependencies
 ## Run the code
 
 ```bash
-  python main.py --(arguement) (value)
+  python main.py --(argument) (value)
 ```
-arguements
+Arguments:
 - summarize-news : Run the news summarizer. 
 - organize : Run the file organizer. requires input-dir and output-dir.
-- input-dir : add the input directory for the file organizer.
-- output-dir : add the output directory for the file organizer.
-- summarize-text : Run the text summerizer. Requires str value and num_sentences.
-- num_sentences : number of sentences in the summary. 
-- text_spin : Run the text spin. Requires str value.
-- sentiment-analysis : Run the sentiment analysis. Requires str value.
-- spell-checker : Run the spell checker. Requires str value.
+- input-dir : add the path for input directory for the file organizer. Enter the value with the file organizer utility.
+- output-dir : add the path for output directory for the file organizer. Enter the value with the file organizer utility.
+- summarize-text : Run the text summarizer. Requires str value and num_sentences.
+- num_sentences : number of sentences in the summary. enter this value with summarize-text function. 
+- text_spin : Run the text spin. Requires str value, use double quotation around string value.
+- sentiment-analysis : Run the sentiment analysis. Requires str value, use double quotation around string value.
+- spell-checker : Run the spell checker. Requires str value, use double quotation around string value.
 
 ## Example Usages
 ```bash
