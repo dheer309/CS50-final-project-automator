@@ -1,6 +1,6 @@
 # automate50 - By Dheer Maheshwari and Pritansh Sahsani
 
-#### Video Demo:  *url
+#### Video Demo: https://www.youtube.com/watch?v=wWrmp7T3deU
 
 #### Description:
 
@@ -73,7 +73,7 @@ This project provided us several valuable learning opportunities:
 Download this project, and go to the project directory
 
 ```bash
-  cd CS50-final-project-automator
+  cd /path/to/project
 ```
 
 Create a virtual environment
@@ -124,10 +124,10 @@ Arguments:
 ```bash
 python main.py --summarize-news
 python main.py --organize --input-dir /path/to/input --output-dir /path/to/output
-python main.py --summarize-text "Lorem ipsum dolor sit amet."
-python main.py --text-spin "Replace this text with synonyms."
+python main.py --summarize-text "Lorem ipsum dolor sit amet." --num-sentences 2
+python main.py --text-spin "She sells seashells by the seashore."
 python main.py --sentiment-analysis "This is a positive sentence."
-python main.py --spell-checker "Thiss is a testt with incorreect spellings."
+python main.py --spell-checker "Thhis is a testt with incorreect spellings."
 ```
 
 ## About Us

@@ -14,7 +14,7 @@ def main():
     parser.add_argument('--output-dir', type=str, help='Output directory path.')
 
     parser.add_argument('--summarize-text', type=str, help='Text to summarize.')
-    parser.add_argument('--num_sentences', type=int, default=3, help='Number of sentences in the summary.')
+    parser.add_argument('--num-sentences', type=int, default=3, help='Number of sentences in the summary.')
 
     parser.add_argument('--text-spin', type=str, help='Replace words in your text with synonyms.')
 
