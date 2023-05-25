@@ -19,6 +19,41 @@ Our project is a series of command-line automations in python related to words a
 
 **Spell checker:** Takes the input text and checks and fixes the spelling errors.
 
+## Code Explanation
+
+#### File Utilities
+
+The `file_utils.py` module provides file-related utilities to organize files into subfolders based on their file extensions.
+
+- `organize_files(source_dir, target_dir)`: This function takes a source directory and a target directory as parameters. It scans the files in the source directory and moves them to the corresponding subfolders in the target directory based on their file extensions. For example, all `.txt` files will be moved to the `TXT` subfolder in the target directory.
+
+#### News Utilities
+
+The `news_utils.py` module offers news-related utilities to retrieve and present top stories from Google News.
+
+- `get_top_stories()`: This function fetches the top stories from Google News using an RSS feed. It returns a list of the titles of the top stories.
+- `present_in_bulleted_list(stories)`: This function takes a list of stories as input and displays them in a bulleted list format.
+
+#### Text Utilities
+
+The `text_utils.py` module provides text-related utilities for tasks such as text summarization, synonym replacement, sentiment analysis, and spell checking.
+
+- `summarize_text(text, num_sentences=3)`: This function generates a summary of the provided text using the LexRank algorithm. The `text` parameter is the input text, and `num_sentences` specifies the number of sentences in the summary.
+- `replace_with_synonyms(text)`: This function replaces words in the text with their synonyms. It utilizes the WordNet database to find synonyms for each word.
+- `get_sentiment_score(text)`: This function performs sentiment analysis on the text and returns a sentiment score. It uses the TextBlob library to determine the polarity of the text.
+- `spell_check(text)`: This function corrects the spelling in the text using a spellchecker. It utilizes the SpellChecker library to identify and replace misspelled words.
+
+
+## Design choices
+
+While developing automate50, we were stuck/confused on lot of design choices, and debated whether to make them or not:
+
+- **File structure**: We were confused whether we should break down the code into multiple files or not, as at first we didn't really need multiple files, but then we realised that the code is becoming bigger and hard to track, hence decided to go with multiple files, as it would make our work easier
+
+- **Function-Based Approach**: We decided to go for a function-based approach rather than using classes, in order to keep the code simple and lightweight. We first thought that we will move to class-based approach later, but decided that as the functionalities provided by the project do not require complex stuff or object-oriented designs, sticking to functions is a better choice.
+
+- **Whether include image tools or not**: At the starting of the project, we added some image tools such as filter, blur and crop, but later, we decided to remove them as it seemed a lot similar from one of the CS50's problem sets, where we have to edit images using C programming, hence we decided to remove that and focus more on tools based on text utilities/automation, files and news automation.
+
 ## Lessons Learned
 
 This project provided us several valuable learning opportunities:
