@@ -101,7 +101,7 @@ Install all dependencies
 
 (this step doesn't work on every internt connection, if it doesn't work, then try running this command with a different internet source)
 ```bash
-  python3 -c "import nltk; nltk.download('punkt'); nltk.download('wordnet');"
+  python3 -c "import nltk; nltk.download('punkt'); nltk.download('wordnet'); nltk.download('averaged_perceptron_tagger');"
 ```
 
 ## Run the code

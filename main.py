@@ -35,7 +35,7 @@ def main():
         organize_files(source_directory, target_directory)
 
     if args.summarize_text:
-        summary_sentences = summarize_text(args.summarizetext, args.num_sentences)
+        summary_sentences = summarize_text(args.summarize_text, args.num_sentences)
         print("Text Summary:")
         for sentence in summary_sentences:
             print("- " + sentence)
